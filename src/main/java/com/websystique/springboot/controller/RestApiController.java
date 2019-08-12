@@ -73,7 +73,9 @@ public class RestApiController {
 			for (int i = 0; i < x; i++) {
 				int n = Character.getNumericValue(user.getTipe().charAt(i));
 				Menu chooseMenu = menuService.findById(n);
-				menuList.add(chooseMenu);
+				if(chooseMenu != null){
+					menuList.add(chooseMenu);
+				}
 			}
 		} else {
 			logger.error("Menu with id {} not found.", id);
